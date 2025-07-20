@@ -1,1 +1,43 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Data Scatter Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f4f4f9; 
+            margin: 0; 
+            padding: 20px; 
+        }
+        h1 { color: #333; }
+        select { 
+            padding: 10px; 
+            font-size: 16px; 
+            margin: 20px; 
+            border-radius: 5px; 
+        }
+        canvas { 
+            max-width: 800px; 
+            margin: 20px auto; 
+            background-color: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+    </style>
+</head>
+<body>
+    <h1>Health Data Scatter Plot</h1>
+    <select id="topicSelect" onchange="updateChart()">
+        <option value="">Select a Topic</option>
+        {% for topic in topics %}
+        <option value="{{ topic }}">{{ topic }}</option>
+        {% endfor %}
+    </select>
+    <canvas id="scatterChart"></canvas>
+    <script src="/static/script.js"></script>
+</body>
+</html>
